@@ -10,9 +10,23 @@ is_alive = True  # Flag to indicate to the program whether it should continue ru
 
 
 def take_screenshot():
-    game_location = pyautogui.locateOnScreen('checkPositionWith.png')
-    print(game_location)
-    pyautogui.screenshot('screenshot.png')
+    pyautogui.screenshot('my_screenshot.png')
+
+
+def up_action():
+    print('up_action pressed')
+
+
+def down_action():
+    print('down_action pressed')
+
+
+def left_action():
+    print('left_action pressed')
+
+
+def right_action():
+    print('right_action pressed')
 
 
 def exit_application():
@@ -23,6 +37,10 @@ def exit_application():
 
 bindings = [  # [<key list>, <keydown handler callback>, <keyup handler callback>]
     [["print_screen"], None, take_screenshot],
+    [["up"], None, up_action],
+    [["down"], None, down_action],
+    [["left"], None, left_action],
+    [["right"], None, right_action],
     [["control", "print_screen", "shift"], None, exit_application],
 ]
 
